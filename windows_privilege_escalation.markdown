@@ -58,6 +58,18 @@
    
     reg query HKCU /f password /t REG_SZ /s
 
+* Add user with Admin privileges
+  ==============================
+
+    net user /add username password
+
+    net localgroup administrators username /add
+
+    net share SHARE_NAME=c:\ /grant:username,full
+
+(**or**)
+
+    net share concfg*C:\/grant:username,full 
 
 * check user privileges
   =====================
